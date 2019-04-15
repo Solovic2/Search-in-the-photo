@@ -1,0 +1,86 @@
+package eg.edu.alexu.csd.datastructure.iceHockey.cs51;
+import static java.lang.Math.abs;
+public class IPlayersFinder {
+    int count=0;
+int a[]=new int [1000];
+int a2[]=new int [1000];
+int z=0;
+    private int[] point;
+    private int[] Point;
+
+
+    public  int rec( String[] photo,int r1,int c2,char pr,int b[][]){
+
+       if( b[r1][c2]!=pr){
+            a[z]=r1;
+            a2[z+1]=c2;
+            z+=2;
+               if(photo[r1].charAt(c2)==pr ){
+                     count++;
+
+                    if(photo[r1+1].charAt(c2)==pr ){
+                        b[r1][c2]=pr;
+                        if(r1+1<photo.length)
+                    rec(photo,r1+1,c2,pr,b);
+                    }
+                    if(photo[r1].charAt(c2+1)==pr  ){
+                            b[r1][c2]=pr;
+                            if(c2+1<photo[r1].length())
+                         rec(photo,r1,c2+1,pr,b);
+                    }   if(photo[r1-1].charAt(c2)==pr  ){
+                        b[r1][c2]=pr;
+                        if(r1-1>=0)
+                         rec(photo,r1-1,c2,pr,b);
+                    }  if(photo[r1].charAt(c2-1)!=pr ){
+                        b[r1][c2]=pr;
+                        if(c2-1>=0)
+                            rec(photo,r1,c2-1,pr,b);
+                    }
+
+               }else{
+               count=0;
+               }
+       }
+            return count;
+
+}
+    int [][]b=new int [50][50];
+    int c[]=new int[1000];
+    int c2[]=new int[1000];
+    int x=0;
+    int value;
+    int value1;
+    int k;
+    int f=0,q=1;
+    int[] findPlayers(String[] photo, int team, int threshold){
+        int teams=team;
+        int t=threshold;
+        for(int i=0;i<photo.length;i++){
+            for(int j=0;j<photo[i].length();i++){
+                if(photo[i].charAt(j)==(char)teams){
+                      if(b[i][j]!=(char)teams){
+                        x=0;
+                        z=0;
+                        c[x]=i;
+                        c2[x+1]=j;
+                        x+=2;
+                          k= rec(photo,i,j,(char) teams,b);
+                        count=0;
+                        }
+                }
+         if(k>=t){
+             k=0;
+            value =abs(a[z-1]-c[x-1])+1;
+        value1=abs(a[z-1]-c[x-1])+1;
+         }
+           k=0; 
+        }
+            Point[f++]=value;
+            Point[q++]=value1;
+    }
+        
+        return point;
+    
+  }
+
+}
