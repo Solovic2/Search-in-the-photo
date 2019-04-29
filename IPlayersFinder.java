@@ -1,9 +1,7 @@
 package eg.edu.alexu.csd.datastructure.iceHockey;
 import static java.lang.Math.abs;
-public class implements IPlayersFinder {
+public class is implements IPlayersFinder {
     int count=0;
-                            //  int a[]=new int [1000];
-                         //  int a2[]=new int [1000];  
 int z=0;
 
     public int[] Point=new int [1000];
