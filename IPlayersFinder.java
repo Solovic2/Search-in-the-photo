@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.iceHockey;
+package eg.edu.alexu.csd.datastructure.iceHockey.cs12;
 import static java.lang.Math.abs;
 import java.awt.*;
 public class is implements IPlayersFinder {
@@ -130,8 +130,9 @@ int va=0;
  
     }
 java.awt.Point []newArr = new java.awt.Point[RE.length / 2];
-for(int i = 0;i < f ;i += 2)
-    newArr[i] = new java.awt.Point(RE[i],RE[i+1]);
+int co=0;
+for(int i = 0;i < f;i += 2)
+    newArr[co++] = new java.awt.Point(RE[i+1],RE[i]);
        
         return newArr;
    
