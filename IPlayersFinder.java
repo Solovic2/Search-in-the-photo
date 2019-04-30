@@ -88,7 +88,7 @@ int va=0;
     int value1;
     int k;
     int f=0,q=1;
-    java.awt.Point[] findPlayers(String[] photo, int team, int threshold){
+    public java.awt.Point[] findPlayers(String[] photo, int team, int threshold){
         int teams=team;
         char g= Integer.toString(teams).charAt(0);
         int t=threshold;
@@ -129,8 +129,8 @@ int va=0;
         }
  
     }
-java.awt.Point newArr = new java.awt.Point[RE.length / 2];
-for(int i = 0;i < RE.length();i += 2)
+java.awt.Point []newArr = new java.awt.Point[RE.length / 2];
+for(int i = 0;i < f ;i += 2)
     newArr[i] = new java.awt.Point(RE[i],RE[i+1]);
        
         return newArr;
