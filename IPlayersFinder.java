@@ -1,17 +1,18 @@
 package eg.edu.alexu.csd.datastructure.iceHockey;
 import static java.lang.Math.abs;
+import java.awt.*;
 public class is implements IPlayersFinder {
     int count=0;
 int z=0;
-
-    public int[] Point=new int [1000];
+ 
+    public int[]RE=new int [1000];
 public int gmax(int a[],int z){
     int max=0;
         if(x==0){
         return a[0];
     }
     for(int i=0;i<z;i++){
-        
+       
         if(i==0){
             max=a[i];
         }
@@ -38,7 +39,7 @@ public int gmax(int a[],int z){
 }
 int va=0;
     public  int rec( String[] photo,int r1,int c2,char pr,int b[][],int a[],int a2[]){
-
+ 
        if( b[r1][c2]!=pr){
             a[z]=r1;
             a2[z]=c2;
@@ -55,7 +56,7 @@ int va=0;
                     if(photo[r1].charAt(c2+1)==pr  ){
                             b[r1][c2]=pr;
                         va= rec(photo,r1,c2+1,pr,b,a,a2);
-                    } 
+                    }
                   }
                   if(r1-1>=0){
                   if(photo[r1-1].charAt(c2)==pr  ){
@@ -75,7 +76,7 @@ int va=0;
                }
        }
             return count;
-
+ 
 }
     int [][]b=new int [50][50];
     int x=0;
@@ -87,7 +88,7 @@ int va=0;
     int value1;
     int k;
     int f=0,q=1;
-    int[] findPlayers(String[] photo, int team, int threshold){
+    java.awt.Point[] findPlayers(String[] photo, int team, int threshold){
         int teams=team;
         char g= Integer.toString(teams).charAt(0);
         int t=threshold;
@@ -111,7 +112,7 @@ int va=0;
                           va2=gmax(a2,z);
                            v1=gmin(a,z);
                           v2=gmin(a2,z);
-  
+ 
                         count=0;
                         }
                 }
@@ -119,18 +120,21 @@ int va=0;
              k=0;
         value =va1+v1+1;
         value1=va2+v2+1;
-           Point[f]=value;
-            Point[f+1]=value1;
+           RE[f]=value;
+            RE[f+1]=value1;
             f+=2;
-            
+           
          }
-           k=0; 
+           k=0;
         }
-
+ 
     }
-        
-        return Point;
-    
+java.awt.Point newArr = new java.awt.Point[RE.length / 2];
+for(int i = 0;i < RE.length();i += 2)
+    newArr[i] = new java.awt.Point(RE[i],RE[i+1]);
+       
+        return newArr;
+   
   }
-
+ 
 }
