@@ -1,4 +1,4 @@
-package eg.edu.alexu.csd.datastructure.iceHockey;
+package eg.edu.alexu.csd.datastructure.iceHockey.cs12;
 public interface IPlayersFinder {
 /**
 * Search for players locations at the given photo
